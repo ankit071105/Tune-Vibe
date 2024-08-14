@@ -1,0 +1,136 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ecf0f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.side-nav {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.side-nav .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.side-nav img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.side-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-nav ul li {
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.main-container {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.song-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.song-item {
+    width: 100%;
+    max-width: 200px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.song-item:hover {
+    transform: scale(1.05);
+}
+
+.music-player-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #34495e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    z-index: 1001;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.music-player-bar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.music-player-bar .song-info {
+    flex: 1;
+    text-align: center;
+}
+
+#timeDisplay {
+    margin-left: auto;
+    padding-right: 20px;
+}
+@media (max-width: 768px) {
+    .side-nav {
+        transform: translateX(-100%);
+    }
+
+    .side-nav.active {
+        transform: translateX(0);
+    }
+
+    .main-container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .song-item {
+        flex: 1 1 100%;
+    }
+
+    .music-player-bar {
+        flex-direction: column;
+    }
+
+    #timeDisplay {
+        padding-right: 0;
+        margin-top: 10px;
+    }
+}
