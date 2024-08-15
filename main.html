@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tune Vibe  </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="side-nav" id="sideNav">
+        <div class="profile">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+            <h2>User Name</h2>
+        </div>
+        <ul>
+            <li onclick="showPlaylists()">Playlists</li>
+            <li onclick="showAboutUs()">About Us</li>
+            <li onclick="showGuide()">Guide</li>
+        </ul>
+    </div>
+    <div class="main-container">
+        <h1>Song List</h1>
+        <div class="song-list" id="songList">
+           
+        </div>
+    </div>
+    <div class="music-player-bar">
+        <button id="prevBtn">⏮️</button>
+        <button id="playPauseBtn">▶️</button>
+        <button id="nextBtn">⏭️</button>
+        <button id="fastForwardBtn">⏩</button>
+        <div class="song-info">
+            <h3 id="songTitle">Song Title</h3>
+            <p id="artistName">Artist Name</p>
+        </div>
+        <div id="timeDisplay">0:00 / 0:00</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
